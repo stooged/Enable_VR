@@ -116,8 +116,8 @@ int patchver(struct thread *td){
 	uint64_t cr0 = readCr0();
 	writeCr0(cr0 & ~X86_CR0_WP);
 
-    //fw 5+  4.55 offset
-    *(uint32_t *)(kernel_base + 0x144B600) = 0x5050001;
+    //fw 6+  4.55 offset
+    *(uint32_t *)(kernel_base + 0x144B600) = 0x6050001;
 
 	// Restore write protection
 	writeCr0(cr0);
